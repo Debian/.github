@@ -41,8 +41,8 @@ Debian does not maintain or distribute the GitHub engine codebase
 because it is not available under free and open-source license (see
 [wikipedia](http://en.wikipedia.org/wiki/Forge_%28software%29) for a
 list of available free and open-source alternatives).  Moreover, this
-organization is not an official part of the Debian project.  It is
-maintained by individual Debian developers (signed below) with the
+GitHub organization is not an official part of the Debian project.  It
+is maintained by individual Debian developers (signed below) with the
 sole purpose of being useful.
 
   -- Charles Plessy <plessy@debian.org>  Thu, 14 Jun 2012 09:11:55 +0900
