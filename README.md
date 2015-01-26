@@ -1,11 +1,11 @@
 README
 ======
 
-[Debian](http:www.debian.org) packages, maintains and distributes some
-works that are developed using GitHub.  This account was created to
-facilitate push/pull interactions with the upstream developers of
-such projects.  If you maintain such a package, please feel free to
-join this group and mirror it here.
+[Debian](http:www.debian.org) packages, maintains and distributes many
+projects developed using GitHub.  This account was created to facilitate
+push/pull interactions with the upstream developers of such projects.  If
+you maintain a package whose upstream developers use GitHub, please feel
+free to join this group and mirror such project here.
 
 This account is not intended to serve as the canonical (specified with
 Vcs-* fields of debian/control) location for corresponding Debian
@@ -22,8 +22,7 @@ You might find following tools available from Debian useful for
 your interaction with GitHub
 
  [github-backup](http://guthub.com/joeyh/github-backup)
-   Back up everything GitHub publishes about the repository
-   (forks, issues, comments, wikis, milestones, pull requests)
+   backs up everything github knows about a repository, to the repository
 
 
 Acknowledgments
