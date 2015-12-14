@@ -22,7 +22,7 @@ You might find following tools available from Debian useful for
 your interaction with GitHub
 
  [github-backup](http://guthub.com/joeyh/github-backup)
-   backs up everything github knows about a repository, to the repository
+   backs up everything GitHub knows about a repository, to the repository
 
 
 Acknowledgments
@@ -38,7 +38,7 @@ Disclaimers
 This GitHub organization is not an endorsement of GitHub by Debian.
 Debian does not maintain or distribute the GitHub engine codebase
 because it is not available under free and open-source license (see
-[wikipedia](http://en.wikipedia.org/wiki/Forge_%28software%29) for a
+[Wikipedia](http://en.wikipedia.org/wiki/Forge_%28software%29) for a
 list of available free and open-source alternatives).  Moreover, this
 GitHub organization is not an official part of the Debian project.  It
 is maintained by individual Debian developers (signed below) with the
