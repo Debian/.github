@@ -12,7 +12,7 @@ Vcs-* fields of debian/control) location for corresponding Debian
 source packages.  Most often such repositories should be made
 available on the Debian project's public forge
 [Alioth](http:git.debian.org) to guarantee
-[autonomy](http://autonomo.us/2008/07/franklin-street-statement).
+[autonomy](http://web.archive.org/web/20081002034726/http://autonomo.us/2008/07/franklin-street-statement/).
 
 
 Tips
