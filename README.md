@@ -21,7 +21,7 @@ Tips
 You might find following tools available from Debian useful for
 your interaction with GitHub
 
- [github-backup](http://guthub.com/joeyh/github-backup)
+ [github-backup](https://github-backup.branchable.com/)
    backs up everything GitHub knows about a repository, to the repository
 
 
