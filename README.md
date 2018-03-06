@@ -11,7 +11,7 @@ This account is not intended to serve as the canonical (specified with
 Vcs-* fields of debian/control) location for corresponding Debian
 source packages.  Most often such repositories should be made
 available on the Debian project's public forge
-[Alioth](http:git.debian.org) to guarantee
+[Salsa](https://salsa.debian.org) to guarantee
 [autonomy](http://web.archive.org/web/20081002034726/http://autonomo.us/2008/07/franklin-street-statement/).
 
 
