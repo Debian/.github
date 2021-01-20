@@ -1,7 +1,7 @@
 README
 ======
 
-[Debian](http:www.debian.org) packages, maintains and distributes many
+[Debian](https:www.debian.org) packages, maintains and distributes many
 projects developed using GitHub.  This account was created to facilitate
 push/pull interactions with the upstream developers of such projects.  If
 you maintain a package whose upstream developers use GitHub, please feel
@@ -38,7 +38,7 @@ Disclaimers
 This GitHub organization is not an endorsement of GitHub by Debian.
 Debian does not maintain or distribute the GitHub engine codebase
 because it is not available under free and open-source license (see
-[Wikipedia](http://en.wikipedia.org/wiki/Forge_%28software%29) for a
+[Wikipedia](https://en.wikipedia.org/wiki/Forge_%28software%29) for a
 list of available free and open-source alternatives).  Moreover, this
 GitHub organization is not an official part of the Debian project.  It
 is maintained by individual Debian developers (signed below) with the
