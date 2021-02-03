@@ -1,7 +1,7 @@
 README
 ======
 
-[Debian](https:www.debian.org) packages, maintains and distributes many
+[Debian](https://www.debian.org) packages, maintains and distributes many
 projects developed using GitHub.  This account was created to facilitate
 push/pull interactions with the upstream developers of such projects.  If
 you maintain a package whose upstream developers use GitHub, please feel
