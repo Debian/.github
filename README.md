@@ -25,7 +25,7 @@ your interaction with GitHub
    backs up everything GitHub knows about a repository, to the repository
 
 
-Acknowledgments
+Acknowledgements
 ---------------
 
 Many thanks to the GitHub admins for their prompt action to release the
