@@ -14,6 +14,12 @@ available on the Debian project's public forge
 [Salsa](https://salsa.debian.org) to guarantee
 [autonomy](https://web.archive.org/web/20081002034726/http://autonomo.us/2008/07/franklin-street-statement/).
 
+How to join
+-----------
+
+Open a **new** issue in [this repository](https://github.com/Debian/.github/issues)
+with a signed statement asking to be added to the organization.
+All active Debian Developers will be approved.
 
 Tips
 ----
