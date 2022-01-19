@@ -1,0 +1,41 @@
+name: Join the team
+description: Request membership in the GitHub Debian team
+title: "please add me to this organization"
+labels: ["join"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+         If you maintain a package whose upstream developers use GitHub, the Debian organization is the right
+         place for mirroring such a project in order to forward patches upstream.
+
+         Note that the @Debian GitHub organization is not intended to serve as the canonical (specified with
+         `Vcs-*` fields of *debian/control*) location for corresponding Debian source packages.
+         Most often such repositories should be made available on the Debian project's public forge
+         [Salsa](https://salsa.debian.org/) to guarantee [autonomy](https://web.archive.org/web/20081002034726/http://autonomo.us/2008/07/franklin-street-statement/).
+
+         In order to make ensure that you are a [Debian Member](https://nm.debian.org/members/) and not a 3rd party
+         trying to impersonate you, we would like to ask you to provide a *signed* membership request.
+
+         Something like the following
+
+         ~~~sh
+         echo "Please add me (Debian user '${DEBEMAIL%@*}') to this organization" | gpg --clear-sign
+         ~~~
+  - type: textarea
+    id: signed-message
+    attributes:
+      label: Your signed membership application
+      description: Please prove your association with Debian with a gpg-signed membership request.
+      placeholder: |
+        -----BEGIN PGP SIGNED MESSAGE-----
+        Hash: SHA256
+
+        Please add me (Debian user 'root') to this organization
+        -----BEGIN PGP SIGNATURE-----
+
+        iQIzBAEBCAAdFiEEdAXnRVdICXNIABVttlAZxH96NvgFAmHoLcUACgkQtlAZx...
+        -----END PGP SIGNATURE-----
+      render: plain text
+    validations:
+      required: true
