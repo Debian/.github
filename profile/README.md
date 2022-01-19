@@ -17,7 +17,7 @@ available on the Debian project's public forge
 How to join
 -----------
 
-Open a **new** issue in [this repository](https://github.com/Debian/.github/issues)
+Open a [**new** issue](https://github.com/Debian/.github/issues/new/choose)
 with a signed statement asking to be added to the organization.
 All active Debian Developers will be approved.
 
