@@ -19,6 +19,8 @@ How to join
 
 Open a [**new** issue](https://github.com/Debian/.github/issues/new/choose)
 with a signed statement asking to be added to the organization.
+The signature needs to be made with your PGP key currently in the
+Debian keyring.
 All active Debian Developers will be approved.
 
 Tips
