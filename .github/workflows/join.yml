@@ -1,0 +1,50 @@
+name: Check Join Requests
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+
+  keycheck:
+    name: Check requirements
+    if: contains(github.event.issue.labels.*.name, 'auto join')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check signature of join request
+        id: gpg-check
+        env:
+          DATA: ${{ github.event.issue.body }}
+        run: |
+          echo "${DATA}" > file.txt
+          sed -e '0,/^```plain text$/d' -e '/```$/,$d' -i file.txt
+
+          rm -rf mypgp
+          mkdir -v -m 0700 mygpg
+
+          gpg --homedir mygpg --verify --status-fd 1 file.txt 2>/dev/null  || true
+          # 0: success
+          # 2: no public key
+          echo "extracting GPG key ID..."
+          key=$(gpg --homedir mygpg --verify --status-fd 1 file.txt 2>/dev/null  | awk '{if ($2 == "ERRSIG") print $9; else if ($2 == "VALIDSIG") print $3}')
+          echo "KEY: ${key}"
+          echo "fetching GPG key from keyring.debian.org..."
+          gpg --homedir mygpg --keyserver keyring.debian.org --recv-keys "$key"
+          echo "verifying the signature..."
+          gpg --homedir mygpg --verify file.txt
+
+  decline:
+    name: Decline membership
+    if: always() && (needs.keycheck.result == 'failure')
+    runs-on: ubuntu-latest
+    needs: ["keycheck"]
+    steps:
+      - name: Close issue
+        uses: peter-evans/close-issue@v2
+        with:
+          comment: |
+            It seems that the membership application was either not PGP signed at all, or signed with a key that is not currently in the Debian keyring (as offered by https://keyring.debian.org).
+            The [Debian GitHub](https://github.com/Debian) organization is intended for [Debian Developers (DD)](https://wiki.debian.org/DebianDeveloper).
+
+            Therefore this issue is closed automatically.
+            If you feel that this is unwarranted (e.g. because the auto-closing :robot: has a bug), please leave a comment.

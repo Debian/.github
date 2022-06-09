@@ -1,7 +1,7 @@
 name: Join the team
 description: Request membership in the GitHub Debian team
 title: "please add me to this organization"
-labels: ["join"]
+labels: ["join", "auto join"]
 body:
   - type: markdown
     attributes:
