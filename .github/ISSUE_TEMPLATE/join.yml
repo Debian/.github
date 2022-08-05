@@ -22,6 +22,8 @@ body:
          ~~~sh
          echo "Please add me (Debian user '${DEBEMAIL%@*}') to this organization" | gpg --clear-sign
          ~~~
+
+         If you want to provide additional information, just add it to the signed message (before signing it).
   - type: textarea
     id: signed-message
     attributes:
