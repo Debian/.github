@@ -19,7 +19,7 @@ jobs:
           echo "${DATA}" > file.txt
           sed -e '0,/^```plain text$/d' -e '/```$/,$d' -i file.txt
 
-          rm -rf mypgp
+          rm -rf mygpg
           mkdir -v -m 0700 mygpg
 
           gpg --homedir mygpg --verify --status-fd 1 file.txt 2>/dev/null  || true
