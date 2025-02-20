@@ -28,7 +28,7 @@ body:
     id: signed-message
     attributes:
       label: Your signed membership application
-      description: Please prove your association with Debian with a gpg-signed membership request.
+      description: Please prove your association with Debian with an OpenPGP signed membership request.
       placeholder: |
         -----BEGIN PGP SIGNED MESSAGE-----
         Hash: SHA512
