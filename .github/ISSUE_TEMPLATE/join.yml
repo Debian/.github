@@ -31,7 +31,7 @@ body:
       description: Please prove your association with Debian with a gpg-signed membership request.
       placeholder: |
         -----BEGIN PGP SIGNED MESSAGE-----
-        Hash: SHA256
+        Hash: SHA512
 
         Please add me (Debian user 'root') to the Debian GitHub organization
         -----BEGIN PGP SIGNATURE-----
