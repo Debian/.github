@@ -20,7 +20,7 @@ body:
          Something like the following
 
          ~~~sh
-         echo "Please add me (Debian user '${DEBEMAIL%@*}') to this organization" | gpg --clear-sign
+         echo "Please add me (Debian user '${DEBEMAIL%@*}') to the Debian GitHub organization" | gpg --clear-sign
          ~~~
 
          If you want to provide additional information, just add it to the signed message (before signing it).
@@ -33,7 +33,7 @@ body:
         -----BEGIN PGP SIGNED MESSAGE-----
         Hash: SHA256
 
-        Please add me (Debian user 'root') to this organization
+        Please add me (Debian user 'root') to the Debian GitHub organization
         -----BEGIN PGP SIGNATURE-----
 
         iQIzBAEBCAAdFiEEdAXnRVdICXNIABVttlAZxH96NvgFAmHoLcUACgkQtlAZx...
