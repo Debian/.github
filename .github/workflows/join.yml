@@ -34,7 +34,7 @@ jobs:
           echo "USER: ${debuser}"
           echo "verifying the signature..."
           gpg --homedir mygpg --verify file.txt
-          echo "::set-output name=DEBUSER::${debuser}"
+          echo "DEBUSER=${debuser}" >> $GITHUB_OUTPUT
     outputs:
       deb-username: ${{ steps.gpg-check.outputs.DEBUSER }}
 
