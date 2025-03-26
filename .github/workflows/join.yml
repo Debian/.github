@@ -1,3 +1,4 @@
+---
 name: Check Join Requests
 
 on:
@@ -31,12 +32,16 @@ jobs:
           echo "fetching GPG key from keyring.debian.org..."
           gpg --homedir mygpg --keyserver keyring.debian.org --recv-keys "$key"
           debuser=$(gpg --homedir mygpg -k ${key} | grep -E "^uid[[:space:]].*@debian.org>" | sed -e 's|.*<\([^@]*\)@debian.org>.*|\1|' | head -1)
-          echo "USER: ${debuser}"
+          userid=$(gpg --homedir mygpg -k ${key} | grep -E "^uid[[:space:]].*\[" | sed -e 's|.*][[:space:]]*||' -e '/^[[:space:]]*$/d' | head -1)
+          echo "primary USER: ${userid}"
+          echo "Debian  USER: ${debuser}"
           echo "verifying the signature..."
           gpg --homedir mygpg --verify file.txt
           echo "DEBUSER=${debuser}" >> $GITHUB_OUTPUT
+          echo "USERID=${userid}" >> $GITHUB_OUTPUT
     outputs:
       deb-username: ${{ steps.gpg-check.outputs.DEBUSER }}
+      pgp-userid: ${{ steps.gpg-check.outputs.USERID }}
 
   decline:
     name: Decline membership
@@ -72,3 +77,19 @@ jobs:
 
             Please stay tuned until some human administrator accepts your application.
 
+  otheremail:
+    name: Debian Developer without @debian.org email
+    runs-on: ubuntu-latest
+    needs: ["keycheck"]
+    if: "${{ needs.keycheck.outputs.deb-username == '' }}"
+    steps:
+      - name: Post username
+        uses: peter-evans/create-or-update-comment@v2
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            Your membership application was correctly PGP signed with a key that is in the Debian keyring :tada:,
+            although there's no debian.org email associated with that key.
+            The first user ID in the key is `${{ needs.keycheck.outputs.pgp-userid }}`.
+
+            Please stay tuned until some human administrator accepts your application.
