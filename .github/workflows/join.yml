@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check signature of join request
-        id: gpg-check
+        id: openpgp-check
         env:
           DATA: ${{ github.event.issue.body }}
         run: |
@@ -26,10 +26,10 @@ jobs:
           gpg --homedir mygpg --verify --status-fd 1 file.txt 2>/dev/null  || true
           # 0: success
           # 2: no public key
-          echo "extracting GPG key ID..."
+          echo "extracting OpenPGP certificate ID..."
           key=$(gpg --homedir mygpg --verify --status-fd 1 file.txt 2>/dev/null  | awk '{if ($2 == "ERRSIG") print $9; else if ($2 == "VALIDSIG") print $3}')
           echo "KEY: ${key}"
-          echo "fetching GPG key from keyring.debian.org..."
+          echo "fetching OpenPGP certificate from keyring.debian.org..."
           gpg --homedir mygpg --keyserver keyring.debian.org --recv-keys "$key"
           debuser=$(gpg --homedir mygpg -k ${key} | grep -E "^uid[[:space:]].*@debian.org>" | sed -e 's|.*<\([^@]*\)@debian.org>.*|\1|' | head -1)
           userid=$(gpg --homedir mygpg -k ${key} | grep -E "^uid[[:space:]].*\[" | sed -e 's|.*][[:space:]]*||' -e '/^[[:space:]]*$/d' | head -1)
@@ -40,8 +40,8 @@ jobs:
           echo "DEBUSER=${debuser}" >> $GITHUB_OUTPUT
           echo "USERID=${userid}" >> $GITHUB_OUTPUT
     outputs:
-      deb-username: ${{ steps.gpg-check.outputs.DEBUSER }}
-      pgp-userid: ${{ steps.gpg-check.outputs.USERID }}
+      deb-username: ${{ steps.openpgp-check.outputs.DEBUSER }}
+      pgp-userid: ${{ steps.openpgp-check.outputs.USERID }}
 
   decline:
     name: Decline membership
